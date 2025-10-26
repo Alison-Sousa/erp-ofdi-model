@@ -1,0 +1,4 @@
+,Accuracy,ROC-AUC,Best_Params
+CatBoost_Ord,0.7862348178137651,0.8978094118836404,"{'m__auto_class_weights': 'Balanced', 'm__depth': 6, 'm__iterations': 300, 'm__learning_rate': 0.01}"
+LGBM_Ord,0.7684210526315789,0.8809661460307833,"{'m__learning_rate': 0.01, 'm__max_depth': 12, 'm__n_estimators': 300, 'm__num_leaves': 31, 'm__scale_pos_weight': 1}"
+XGB_Ord,0.7651821862348178,0.880511221472439,"{'m__learning_rate': 0.01, 'm__max_depth': 8, 'm__n_estimators': 500, 'm__scale_pos_weight': 1}"

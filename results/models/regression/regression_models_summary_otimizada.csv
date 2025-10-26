@@ -1,0 +1,3 @@
+,RMSE(log),MAPE(Original),Best_Params
+LGBM_Ord,0.488562392163904,42.4244255540025,"{'m__colsample_bytree': 0.8, 'm__learning_rate': 0.01, 'm__max_depth': 8, 'm__n_estimators': 1000, 'm__num_leaves': 31, 'm__reg_alpha': 0.5, 'm__reg_lambda': 0.1, 'm__subsample': 0.7}"
+XGB_Ord,0.49427638564712617,42.46115382736018,"{'m__colsample_bytree': 0.7, 'm__learning_rate': 0.01, 'm__max_depth': 6, 'm__n_estimators': 1000, 'm__reg_alpha': 0.1, 'm__reg_lambda': 1, 'm__subsample': 0.8}"
