@@ -5,21 +5,28 @@ Pipeline para análise de investimentos chineses no exterior (OFDI) e impacto da
 
 **Fonte dos dados**: 🎓 Dr. Derek Scissors, PhD - Stanford University / American Enterprise Institute
 
-**Documentação:** Consulte `docs.pdf` para detalhes de implementação, metodologia e especificações técnicas.
+**Documentação**
 
----
+- **Pipeline e Implementação:**  
+  - [`docsPython.pdf`](docsPython.pdf)  
+  - [`docsR.pdf`](docsR.pdf)  
+  Contêm detalhes completos sobre implementação, metodologia e especificações técnicas do pipeline.
+
+- **Interpretação de Métricas:**  
+  - [`itpt.pdf`](itpt.pdf)  
+  Inclui análise COFDI-ERP, abrangendo regressão, classificação, séries temporais, causalidade e outras métricas.
 
 ## 🔄 Estrutura do Projeto
 
 ### 📁 `data/` → 📥 **ETAPA 1: Carga de Dados**
-**Arquivos**: `data.csv` (transações 2005-2024) + `naturalearth_lowres.zip` (mapas)
-- **Processo**: Carrega CSV → Limpa dados → Converte colunas numéricas → Filtra anos válidos
-- **Resultado**: DataFrame limpo com 20+ colunas processadas
+**Arquivos**: `data.csv` (transações 2005-2024) + `naturalearth_lowres.zip` (mapas)  
+- **Processo**: Carrega CSV → Limpa dados → Converte colunas numéricas → Filtra anos válidos  
+- **Resultado**: DataFrame organizados e preparados para análise
 
 ### 📁 `code/` → 🚀 **Execução Principal**
-**Arquivos**: `main.py` (orquestração) + `requirements.txt` (dependências)
-- **Comando**: `python .\code\main.py`
-- **Função**: Executa todas as 11 etapas automaticamente
+**Arquivos**: `code.py` (orquestração) + `requirements.txt` (dependências)  
+- **Comando**: `python .\code\code.py`  
+- **Função**: Executa todas as 11 etapas automaticamente (Python)
 
 ### 📁 `results/` → 📊 **Saídas Geradas**
 
@@ -87,29 +94,34 @@ Pipeline para análise de investimentos chineses no exterior (OFDI) e impacto da
 
 ---
 
-## 📋 **Resumo das 11 Etapas Automáticas**
+## 📋 **Resumo das 11 Etapas Automáticas (Python)**
 
-1. **📥 Carga Dados** → Limpeza e validação
-2. **🛠️ Engenharia Features** → Criação variáveis ML
-3. **🎨 Visualizações R-style** → 10+ gráficos profissionais
-4. **📊 EDA** → Análise exploratória estatística
-5. **🔬 Análise Fase GG** → Modelos OLS por período
-6. **🤖 Regressão** → Previsão valor investimento (XGBoost/LightGBM)
-7. **🎯 Classificação** → Identificação alto valor (AUC-ROC)
-8. **⏱️ Séries Temporais** → ARIMA & Prophet
-9. **🔬 Modelos Causais** → Double ML & Markov Switching
-10. **🔍 SHAP** → Interpretabilidade do modelo
-11. **💾 Consolidação** → Salva todos resultados
+1. **📥 Carga Dados** → Limpeza e validação  
+2. **🛠️ Engenharia Features** → Criação variáveis ML  
+3. **🎨 Visualizações** → 20+ gráficos profissionais (via `code.py` e `code.R`)  
+4. **📊 EDA** → Análise exploratória estatística  
+5. **🔬 Análise Fase GG** → Modelos OLS por período  
+6. **🤖 Regressão** → Previsão valor investimento (XGBoost/LightGBM)  
+7. **🎯 Classificação** → Identificação alto valor (AUC-ROC)  
+8. **⏱️ Séries Temporais** → ARIMA & Prophet  
+9. **🔬 Modelos Causais** → Double ML & Markov Switching  
+10. **🔍 SHAP** → Interpretabilidade do modelo  
+11. **💾 Consolidação** → Salva todos resultados  
 
 ---
 
 ## 🚀 **Execução**
 
 ```bash
-# 1. Instalar dependências
+# 1. Instalar dependências Python
 python -m pip install -r requirements.txt
 
-# 2. Executar pipeline
-python .\code\main.py
+# 2. Executar pipeline Python
+python ./code/code.py
 
-# 3. Ver resultados na pasta /results/
+# 3. Executar código R para gerar gráficos sofisticados
+Rscript ./code/code.R
+
+# 4. Ver resultados
+#    Python: ./results/
+#    R: ./results/R/
